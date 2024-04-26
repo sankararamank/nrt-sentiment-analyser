@@ -1,12 +1,13 @@
 # Consumes texts to perform sentinment analysis
 # Credits: Data Camp
 # Ref: https://www.datacamp.com/tutorial/text-analytics-beginners-nltk
-import pandas as pd
+
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer
-# nltk.download('all')
+import pandas as pd
+
 
 # initialize NLTK sentiment analyzer
 analyzer = SentimentIntensityAnalyzer()
