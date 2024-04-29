@@ -1,7 +1,6 @@
 from argparse import ArgumentParser, FileType
 from configparser import ConfigParser
 from confluent_kafka import Producer
-# import keyboard
 
 parser = ArgumentParser()
 parser.add_argument("config_file", type=FileType("r"))
@@ -16,9 +15,4 @@ producer = Producer(config)
 
 def publish(message):
     producer.produce(producer_config["topic"], value=message)
-    producer.flush()  # Ensure the message is sent immediately
-
-# while True:
-#     publish(message)
-#     if keyboard.is_pressed("q"):
-#         break
+    producer.flush()
