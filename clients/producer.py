@@ -8,8 +8,8 @@ class BaseProducer:
 
 
 class KafkaProducer(BaseProducer):
-    def __init__(self, topic):
-        self.topic = topic
+    def __init__(self):
+        self.topic = producer_config["topic"]
         self.producer = Producer(default_config)
 
     def publish(self, event):
@@ -20,8 +20,7 @@ class KafkaProducer(BaseProducer):
 class ProducerFactory:
     @staticmethod
     def create():
-
         if producer_config["type"].upper() == "KAFKA":
-            return KafkaProducer(producer_config["topic"])
-        else:
-            raise ValueError("Provider not defined.")
+            return KafkaProducer()
+
+        raise ValueError("Provider not defined.")
