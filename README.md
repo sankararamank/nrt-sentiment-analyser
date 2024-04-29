@@ -7,4 +7,4 @@ The motivation of this project is to develop a plug and play model to perform se
 1. `pip install requirements.txt`
 2. Open the python terminal and do the following
     1. `import nltk`
-    2. `nltk.download('all')`
+    2. `nltk.download("all")`
